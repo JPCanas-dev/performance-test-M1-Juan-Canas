@@ -1,9 +1,5 @@
 
-students = [
-    {"id" : int(1000), "name" : "Juan", "age" : int(28), "course" : "Math", "state" : "active"}
-]
-
-def student_id(students):
+def id_validation(students):
 
     correct_id = 0
 
@@ -28,6 +24,10 @@ def student_id(students):
             except ValueError:
                 print("Please enter only integers!")
 
+    return id
+
+def name_validation(students):
+
     correct_name = 0
 
     while correct_name == 0:
@@ -46,7 +46,11 @@ def student_id(students):
         else:
             print("Please enter only strings!")
 
-        correct_age = 0
+    return name
+
+def age_validation():
+
+    correct_age = 0
 
     while correct_age == 0:
 
@@ -57,12 +61,16 @@ def student_id(students):
         else:
             try:
                 age = int(age)
-                if age <= 0:
-                    print("Age must be greater than 0!")
+                if age <= 6:
+                    print("Age must be greater than 6!")
                 else:
                     correct_age = 1
             except:
                 print("\nPlease enter only integers!")
+
+    return age
+
+def course_validation():
 
     correct_course = 0
 
@@ -76,6 +84,10 @@ def student_id(students):
                 correct_course = 1
         else:
             print("Please enter only strings!")
+
+    return course
+
+def state_validation():
 
     correct_state = 0
 
@@ -93,6 +105,4 @@ def student_id(students):
         else:
             print("Please enter only strings!")
 
-    
-
-student_id(students)
+    return state

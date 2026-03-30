@@ -1,3 +1,7 @@
+from register_student import new_student
+from search_student import search
+from update_student import update
+from delete_student import delete
 
 def menu(students):
 
@@ -16,31 +20,27 @@ def menu(students):
         print()
 
         if option == "1":
-            
-
+            add_message = new_student(students)
+            print(add_message)
 
         elif option == "2":
-            # Check if inventory is empty before displaying
-            if not inventory:
-                print("INVENTORY IS EMPTY!")
-            else:
-                # Call function to show all products
-                show_inventory(inventory)
+            for s in students:
+                print(f"ID: {s['id']}")
+                print(f"Name: {s['name']}")
+                print(f"Age: {s['age']}")
+                print(f"Course: {s['course']}")
+                print(f"State: {s['state']}\n")
 
         elif option == "3":
-            # Check if inventory is empty before calculating statistics
-            if not inventory:
-                print("INVENTORY IS EMPTY!")
-            else:
-                # Call function to calculate totals
-                total_revenue, total_product = statistics(inventory)
-
-                # Display formatted results
-                print(f"Total revenue: $ {total_revenue:,}")
-                print(f"Total registered products: {total_product}")
+            search(students)
 
         elif option == "4":
-            # Change control variable to exit the loop
+            update(students)
+
+        elif option == "5":
+            delete(students)
+
+        elif option == "6":
             end_menu = 1
 
         else:
@@ -48,4 +48,4 @@ def menu(students):
             print("PLEASE ENTER A VALID VALUE!")
 
     # Return exit message after leaving the loop
-    return "THANKS FOR USING MY SERVICES!\n"
+    return "THANKS FOR USING OUR SERVICES!\n"
