@@ -5,6 +5,7 @@ def id_validation(students):
 
     while correct_id == 0:
 
+        # Ask user for student id
         id = input("Enter id: ").strip()
 
         if not id:
@@ -32,6 +33,7 @@ def name_validation(students):
 
     while correct_name == 0:
 
+        # Ask user for student name
         name = input("Enter name: ").strip()
 
         if not name:
@@ -54,6 +56,7 @@ def age_validation():
 
     while correct_age == 0:
 
+        # Ask user for student age
         age = input("Enter age: ").strip() 
 
         if not age:
@@ -76,6 +79,7 @@ def course_validation():
 
     while correct_course == 0:
 
+        # Ask user for student course
         course = input("Enter course: ").strip()
 
         if not course:
@@ -91,6 +95,7 @@ def state_validation():
 
     correct_state = 0
 
+    # Ask user for student state
     while correct_state == 0:
 
         state = input("Enter state (active/inactive): ").strip()

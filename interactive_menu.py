@@ -1,3 +1,4 @@
+# Import functions from other modules
 from register_student import new_student
 from search_student import search
 from update_student import update
@@ -5,10 +6,13 @@ from delete_student import delete
 
 def menu(students):
 
+    # Variable to control the menu loop
     end_menu = 0
 
+    # Main loop: keeps showing the menu until user chooses to exit
     while end_menu == 0:
 
+        # Display menu options
         print("\n1. Register student")
         print("2. Display student list")
         print("3. Search student")
@@ -24,23 +28,35 @@ def menu(students):
             print(add_message)
 
         elif option == "2":
-            for s in students:
-                print(f"ID: {s['id']}")
-                print(f"Name: {s['name']}")
-                print(f"Age: {s['age']}")
-                print(f"Course: {s['course']}")
-                print(f"State: {s['state']}\n")
+            if not students:
+                print("STUDENTS LIST EMPTY!")
+            else:
+                for s in students:
+                    print(f"ID: {s['id']}")
+                    print(f"Name: {s['name']}")
+                    print(f"Age: {s['age']}")
+                    print(f"Course: {s['course']}")
+                    print(f"State: {s['state']}\n")
 
         elif option == "3":
-            search(students)
+            if not students:
+                print("STUDENTS LIST EMPTY!")
+            else:
+                search(students)
 
         elif option == "4":
+            if not students:
+                print("STUDENTS LIST EMPTY!")
             update(students)
 
         elif option == "5":
-            delete(students)
+            if not students:
+                print("STUDENTS LIST EMPTY!")
+            else:
+                delete(students)
 
         elif option == "6":
+            # Change control variable to exit the loop
             end_menu = 1
 
         else:

@@ -6,6 +6,7 @@ def search(students):
 
     while correct_id == 0:
 
+        # Get student ID from user
         what_id = input("Enter id: ").strip()
 
         if not what_id:
@@ -20,6 +21,7 @@ def search(students):
             except ValueError:
                 print("Please enter only integers!")
 
+    # Search student ID in the list
     for s in students:
         if s["id"] == what_id:
             print("\nFOUND STUDENT:")
@@ -30,6 +32,7 @@ def search(students):
             print(f"State: {s['state']}")
             break
 
+    # If student was not found
     else:
         print("\nSTUDENT DOESN'T EXIST!")
 

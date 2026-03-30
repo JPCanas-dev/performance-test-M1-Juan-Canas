@@ -1,3 +1,4 @@
+# Import functions from other modules
 from input_validations import id_validation, name_validation, age_validation
 from input_validations import course_validation, state_validation
 
@@ -10,6 +11,7 @@ def new_student(students):
     course = course_validation()
     state = state_validation()
 
+    # Create student dictionary
     student_added = {
         "id" : id,
         "name" : name,
@@ -18,6 +20,7 @@ def new_student(students):
         "state" : state
     }
 
+    # Add student to the list
     students.append(student_added)
 
     return"\nSTUDENT REGISTERED SUCCESSFULLY!"
