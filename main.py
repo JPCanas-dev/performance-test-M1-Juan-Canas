@@ -6,8 +6,6 @@ students = [
 ]
 
 if __name__ == "__main__":
-
-
     print()
     print("=" * 46)
     print("WELCOME TO J-STUDENT REGISTRITATION SYSTEM".center(46))
