@@ -34,7 +34,8 @@ def update(students):
 
                     for s in students:
                         if s["id"] == what_id:
-                            print(f"STUDENT UPDATE: {s['name']} | New age: {new_age}")
+                            s["age"] = new_age
+                            print(f"STUDENT UPDATE: {s['name']} | New age: {s['age']}")
                             break
 
                 # Ask if user wants to update course
@@ -45,7 +46,8 @@ def update(students):
                     
                     for s in students:
                         if s["id"] == what_id:
-                            print(f"STUDENT UPDATE: {s['name']} | New course: {new_course}")
+                            s["course"] = new_course
+                            print(f"STUDENT UPDATE: {s['name']} | New course: {s['course']}")
                             break
 
                 # Ask if user wants to update state
@@ -56,7 +58,8 @@ def update(students):
 
                     for s in students:
                         if s["id"] == what_id:
-                            print(f"STUDENT UPDATE: {s['name']} | New state: {new_state}")
+                            s["state"] = new_state
+                            print(f"STUDENT UPDATE: {s['name']} | New state: {s['state']}")
                             break
 
                 if change_age.lower() not in ["y", "yes"] and change_course.lower() not in ["y", "yes"] and change_state.lower() not in ["y", "yes"]:

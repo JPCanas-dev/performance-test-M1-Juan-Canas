@@ -101,7 +101,7 @@ def state_validation():
         state = input("Enter state (active/inactive): ").strip()
 
         if not state:
-            print("EMPTY COURSE! Please enter strings")
+            print("EMPTY STATE! Please enter strings")
         elif state.replace(" ","").isalpha():
                 if not state.lower() in ["active","inactive"]:
                     print("Please enter only active/inactive")
