@@ -47,7 +47,8 @@ def menu(students):
         elif option == "4":
             if not students:
                 print("STUDENTS LIST EMPTY!")
-            update(students)
+            else:
+                update(students)
 
         elif option == "5":
             if not students:
